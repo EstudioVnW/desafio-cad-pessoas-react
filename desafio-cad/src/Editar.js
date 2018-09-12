@@ -5,11 +5,21 @@ class Editar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      valor:'',
+      valor1:'',
+      text:[],
     }
   }
-  inp = (event) =>{
-    this.setState({valor:event.target.value});
+  inpNome = (event) =>{
+    this.setState({text:event.target.value});
+  }
+  enviar = (event) => {
+    this.setState({
+      valor1:this.state.text
+    })
+    this.setState({
+      text:this.state.temp,
+      temp:''
+    })
   }
   render() {
     return (
@@ -19,7 +29,7 @@ class Editar extends Component {
           <div>
             <div> 
               <p>Nome:</p> 
-              <input type="text" onChange={this.inp}></input>
+              <input type="text" onChange={this.inpNome}></input>
             </div>
             <div>
               <p>Nascimento:</p>
@@ -61,8 +71,9 @@ class Editar extends Component {
             </div>
           </div>
           <div>
-            <Link to="/"><button>Atualizar</button></Link>
+            <Link to="/"><button onClick={this.enviar}>Atualizar</button></Link>
           </div>
+          {/* <p>{this.state.valor1}</p> */}
         </section>
       </div>
     );

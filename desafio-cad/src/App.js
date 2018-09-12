@@ -4,7 +4,13 @@ import Nova from './Nova';
 import { Switch, Route, Link } from 'react-router-dom';
 
 class App extends Component {
-  
+  constructor(props){
+    super(props);
+    this.state = {
+      valorDaLista: [''],
+    }
+    console.log(this.state.vida)
+  }
   editar = () => {
     
   }
@@ -30,8 +36,9 @@ class App extends Component {
           </section>
           <section>
             <Switch>
-              <Route path="/editar" component={Editar}/>
-              <Route path="/nova" component={Nova}/>
+              <Route exact path='/' render={(props) => <Editar />}/>
+              <Route exact path="/editar" component={Editar}/>
+              <Route exact path="/nova" component={Nova}/>
             </Switch>          
           </section>
           <section>
