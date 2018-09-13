@@ -29,45 +29,45 @@ class Editar extends Component {
           <div>
             <div> 
               <p>Nome:</p> 
-              <input type="text" onChange={this.inpNome}></input>
+              <input value="Maria Alice Ribeiro" type="text" onChange={this.inpNome}></input>
             </div>
             <div>
               <p>Nascimento:</p>
-              <input type="text"></input>
+              <input value="04/05/1985" type="text"></input>
             </div>
           </div>
           <div>
             <div>
               <p>RG:</p>
-              <input type="text"></input>
+              <input value="14570114774" type="text"></input>
             </div>
             <div>
               <p>CPF:</p>
-              <input type="text"></input>
+              <input value="024.098.456-71" type="text"></input>
             </div>
           </div>
           <div>
             <div>
               <p>Endereço:</p>
-              <input type="text"></input>
+              <input value="Rua dos Girassóis, 765" type="text"></input>
             </div>
             <div>
               <p>CEP:</p>
-              <input type="text"></input>
+              <input value="48901-190" type="text"></input>
             </div>
           </div>
           <div>
             <div>
               <p>Bairro:</p>
-              <input type="text"></input>
+              <input value="Quidé" type="text"></input>
             </div>
             <div>
               <p>Cidade:</p>
-              <input type="text"></input>
+              <input value="Juazeiros" type="text"></input>
             </div>
             <div>
               <p>Estado:</p>
-              <input type="text"></input>
+              <input value="Bahia" type="text"></input>
             </div>
           </div>
           <div>

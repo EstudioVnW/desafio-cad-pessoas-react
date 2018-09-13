@@ -1,49 +1,88 @@
 import React, { Component } from 'react';
+
 import Editar from './Editar'; 
 import Nova from './Nova'; 
+import Dados from './Dados';
+import Lista from './Lista';
+import './App.css';
+
 import { Switch, Route, Link } from 'react-router-dom';
+
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      valorDaLista: [''],
+      pessoas: [
+        {
+          nome: "Julia Maria de Freitas",
+          nascimento: "2018-09-10T18:29:26.920Z",
+          rg: "1334081571",
+          cpf: "056.098.120-72",
+          endereco: "Rua da Mangueira, 560",
+          cep: "48901-190",
+          bairro: "Pedra do Lorde",
+          cidade: "Juazeiro",
+          estado: "Bahia"
+        },
+        {
+          nome: "Julia Maria de Freitas",
+          nascimento: "2018-09-10T18:29:26.920Z",
+          rg: "1334081571",
+          cpf: "056.098.120-72",
+          endereco: "Rua da Mangueira, 560",
+          cep: "48901-190",
+          bairro: "Pedra do Lorde",
+          cidade: "Juazeiro",
+          estado: "Bahia"
+        },
+        {
+          nome: "Julia Maria de Freitas",
+          nascimento: "2018-09-10T18:29:26.920Z",
+          rg: "1334081571",
+          cpf: "056.098.120-72",
+          endereco: "Rua da Mangueira, 560",
+          cep: "48901-190",
+          bairro: "Pedra do Lorde",
+          cidade: "Juazeiro",
+          estado: "Bahia"
+        }
+      ],
     }
-    console.log(this.state.vida)
+  }
+  dados = () => {
+    return null
   }
   editar = () => {
-    
+    return null
   }
   nova = () => {
-    
+    return null
   }
   render() {
+    const { pessoas } = this.state;
+
     return (
       <div className="App">
-        <header>
+        <header className="title">
           <h1>Cadastro de Pessoas</h1> 
         </header>
-        <main>
-          <section>
-            <ul>
-              <li></li>
-            </ul>
-          </section>
+        <main className="box-data">
+          <Lista pessoas={ pessoas } />
           <section>
             <div>
                 <h3>Pessoa selecionada</h3>
             </div>
-          </section>
-          <section>
             <Switch>
-              <Route exact path='/' render={(props) => <Editar />}/>
+              <Route exact path="/" component={Dados}/>
               <Route exact path="/editar" component={Editar}/>
               <Route exact path="/nova" component={Nova}/>
             </Switch>          
-          </section>
-          <section>
-            <Link to="/Nova"><button onClick={this.nova} >Adicionar nova</button></Link>
-            <Link to="/Editar"><button onClick={this.editar}>Editar</button></Link>
+            <div>
+              <Link to="/Dados"></Link>
+              <Link to="/Nova"><button >Adicionar nova</button></Link>
+              <Link to="/Editar"><button >Editar</button></Link>
+            </div>
           </section>
         </main>
       </div>
