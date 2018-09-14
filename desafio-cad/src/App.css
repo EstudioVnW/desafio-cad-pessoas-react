@@ -1,5 +1,5 @@
 .App{
-    width: 60%;
+    width: 80%;
     height:auto ;
     display: flex;
     flex-direction: column;
@@ -25,11 +25,37 @@
     flex-direction: column;
     align-items: center;
     list-style-type: none;
-    
+    overflow-y : scroll;
 }
-.button-list{
+.link-list{
     width: 200px;
     height: 40px;
     text-align: left;
     border: solid 1px;
+    background-color: aqua;
+    
+}
+.box-internal{
+    width: 100%;
+    margin-left: 30px;
+}
+.box-zero{
+    width: 600px;
+}
+.box-primary{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.box-secondary{
+    display: flex;
+    justify-content: space-between;
+}
+.box-tertiary{
+    display: flex;
+    justify-content: space-between;
+}
+.box-quaternary{
+    display: flex;
+    justify-content: space-between;
 }

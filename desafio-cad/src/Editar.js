@@ -4,22 +4,12 @@ import { Link } from 'react-router-dom';
 class Editar extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      valor1:'',
+    this.state = { 
       text:[],
     }
   }
   inpNome = (event) =>{
     this.setState({text:event.target.value});
-  }
-  enviar = (event) => {
-    this.setState({
-      valor1:this.state.text
-    })
-    this.setState({
-      text:this.state.temp,
-      temp:''
-    })
   }
   render() {
     return (
@@ -71,9 +61,8 @@ class Editar extends Component {
             </div>
           </div>
           <div>
-            <Link to="/"><button onClick={this.enviar}>Atualizar</button></Link>
+            <Link to="/"><button>Atualizar</button></Link>
           </div>
-          {/* <p>{this.state.valor1}</p> */}
         </section>
       </div>
     );

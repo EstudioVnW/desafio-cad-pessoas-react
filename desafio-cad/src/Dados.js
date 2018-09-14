@@ -2,48 +2,41 @@ import React, { Component } from 'react';
 
 
 class Dados extends Component{
-    render() {
-        return(
-            <section>
-                <div> 
-                <p>Nome:</p> 
-                <p>Maria Alice Ribeiro</p>
-              </div>
-              <div>
-                <p>Nascimento:</p>
-                <p>04/05/1985</p>
-              </div>
-              <div>
-                <p>RG:</p>
-                <p>14570114774</p>
-              </div>
-              <div>
-                <p>CPF:</p>
-                <p>024.098.456-71</p>
-              </div>
-              <div>
-                <p>Endereço:</p>
-                <p>Rua dos Girassóis, 765</p>
-              </div>
-              <div>
-                <p>CEP:</p>
-                <p>48901-190</p>
-              </div>
-              <div>
-                <p>Bairro:</p>
-                <p>Quidé</p>
-              </div>
-              <div>
-                <p>Cidade:</p>
-                <p>Juazeiros</p>
-              </div>
-              <div>
-                <p>Estado:</p>
-                <p>Bahia</p>
-              </div>
-            </section>
-        )
+  constructor(props){
+    super(props);
+    this.state = {
+      pessoas: this.props.getPessoa(this.props.match.params.id)
     }
+  }
+  componentWillReceiveProps(nextProps) {
+    if(this.props.match.params.id !== nextProps.match.params.id){
+      this.setState({ pessoas: this.props.getPessoa(nextProps.match.params.id)});
+    }
+  }
+  render() {
+    console.log(this.state.pessoas)
+      return(
+        <section className="box-zero">
+          <div className="box-primary"> 
+            <p>Nome: {this.state.pessoas.nome}</p> 
+            <p>Nascimento: {this.state.pessoas.nascimento}</p>
+          </div>
+          <div className="box-secondary">
+            <p>RG: {this.state.pessoas.rg}</p>
+            <p>CPF: {this.state.pessoas.cpf}</p>
+          </div>
+          <div className="box-tertiary">
+            <p>Endereço: {this.state.pessoas.endereco}</p>
+            <p>CEP: {this.state.pessoas.cep}</p>
+          </div>
+          <div className="box-quaternary">
+            <p>Bairro: {this.state.pessoas.bairro}</p>
+            <p>Cidade: {this.state.pessoas.cidade}</p>
+            <p>Estado: {this.state.pessoas.estado}</p>
+          </div>
+        </section>
+      )
+  }
 }
 
 
