@@ -1,0 +1,61 @@
+.App{
+    width: 80%;
+    height:auto ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(187, 183, 183);
+    border: solid 1px;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    border-bottom: solid 1px; 
+}
+.box-data{
+    display: flex;
+    flex-direction: row;
+    background-color: azure;
+}
+.box-buttons{
+    border-left: solid 1px;
+}
+.box-buttons-ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    overflow-y : scroll;
+}
+.link-list{
+    width: 200px;
+    height: 40px;
+    text-align: left;
+    border: solid 1px;
+    background-color: aqua;
+    
+}
+.box-internal{
+    width: 100%;
+    margin-left: 30px;
+}
+.box-zero{
+    width: 600px;
+}
+.box-primary{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.box-secondary{
+    display: flex;
+    justify-content: space-between;
+}
+.box-tertiary{
+    display: flex;
+    justify-content: space-between;
+}
+.box-quaternary{
+    display: flex;
+    justify-content: space-between;
+}
